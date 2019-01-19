@@ -30,7 +30,7 @@ export class AppComponent {
       id: this.generateId()
     });
   }
-  
+
   onSaveServers() {
     this.serverService.storeServers(this.servers).subscribe(
       (response) => console.log(response),
@@ -40,7 +40,7 @@ export class AppComponent {
 
   onGetServers() {
     this.serverService.getServers().subscribe(
-      (servers: any[]) => console.log(servers),
+      (servers: any[]) => this.servers = servers,
       (errror) => console.log(errror)
     );
   }
